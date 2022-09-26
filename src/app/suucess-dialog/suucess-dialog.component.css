@@ -1,0 +1,31 @@
+.close-button{
+    float: right;
+    top:-5px;
+  }
+  ::ng-deep.mat-dialog-container.mat-dialog-container{
+    padding: 5px !important;
+    border-radius: 15px !important;
+    overflow: unset !important;
+  }
+  ::ng-deep.mat-dialog-content.mat-dialog-content{
+    padding: 10px 10px 10px 30px !important;
+  }
+  .mat-icon.mat-warn {
+    color: white !important;
+  }
+  
+  .close-icon {
+    transition: 1s ease-in-out;
+  }
+  
+  .close-icon:hover {
+    transform: rotate(180deg);
+  }
+  .primary-background {
+    background: #4473c6;
+    color: white;
+    box-shadow: 2px 5px 5px 0px #151fa79e;
+    max-width: 100%;
+    padding: 0px !important;
+    border-radius: 5px;
+  }
