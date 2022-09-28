@@ -1,19 +1,45 @@
+.mat-icon-focus-overlay {background: transparent !important;}
 .close-button{
     float: right;
-    top:-5px;
+    height: 35px  !important; 
+    line-height: 27px  !important;
+    background: transparent !important;
+    color: white !important;
+    border-radius: 0px !important;
+    border-color: transparent !important;
+    transform: translate(0px);
+    -webkit-tap-highlight-color: transparent;
   }
-  ::ng-deep.mat-dialog-container.mat-dialog-container{
-    padding: 5px !important;
-    border-radius: 15px !important;
+  .mat-dialog-container.mat-dialog-container{
+    border-radius: 30px !important;
+    overflow: unset !important;
+  }
+  .mat-dialog-content.mat-dialog-content{
+    padding: 0px 25px !important;
+  }
+
+  /* ::ng-deep.mat-dialog-container.mat-dialog-container{
+    border-radius: 30px !important;
     overflow: unset !important;
   }
   ::ng-deep.mat-dialog-content.mat-dialog-content{
-    padding: 10px 10px 10px 30px !important;
+    padding: 0px 25px !important;
+  } */
+  .mat-icon.mail-icon{
+    transform: translate(2px, 5px) !important;
+  }
+  .mat-dialog-title.mat-dialog-title {
+    margin: 0 0 10px !important;
   }
   .mat-icon.mat-warn {
     color: white !important;
   }
-  
+  .celebration-image {
+    width: 100%;
+    max-width: 50px;
+    height: auto;
+    transform: translate(0px, 5px);
+  }
   .close-icon {
     transition: 1s ease-in-out;
   }
@@ -26,6 +52,6 @@
     color: white;
     box-shadow: 2px 5px 5px 0px #151fa79e;
     max-width: 100%;
-    padding: 0px !important;
-    border-radius: 5px;
+    padding: 5px !important;
+    border-radius: 15px;
   }

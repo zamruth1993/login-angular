@@ -1,62 +1,56 @@
 <div class="container">
-    <form [formGroup]="loginForm" fxLayout="column">
-   <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
-    <mat-form-field appearance="outline">
-        <mat-label>First Name</mat-label>
-        <input matInput formControlName="firstName" placeholder="First Name">
-        <mat-error>First Name is required</mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Last Name</mat-label>
-        <input matInput formControlName="lastName" placeholder="Last Name">
-        <mat-error>Last Name is required</mat-error>
-    </mat-form-field>
-
-    </div>
-       
-
+    <h1 class="signup-form"> Sign Up </h1>
+    <form [formGroup]="loginForm" fxLayout="column" class="formstyle">
+        <!-- firstname and lastname in a single row using flexlayout -->
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
         <mat-form-field appearance="outline">
-            <mat-label>Description</mat-label>
-            <textarea  matInput formControlName="description" placeholder="Description"></textarea>
-            <mat-error>Description is required</mat-error>
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" placeholder="First Name">
+          <mat-error>First Name is required</mat-error>
         </mat-form-field>
-
         <mat-form-field appearance="outline">
-            <mat-label>Email Address</mat-label>
-            <input matInput formControlName="emailaddress" placeholder="emailaddress">
-            <mat-error *ngIf="loginForm.controls.emailaddress.errors?.required">Email Address is required</mat-error>
-            <mat-error *ngIf="loginForm.controls.emailaddress.errors?.pattern">Email Address is invalid</mat-error>
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" placeholder="Last Name">
+          <mat-error>Last Name is required</mat-error>
         </mat-form-field>
-
-        <div fxLayout="row" >
-            <img *ngFor='let preview of previews' [src]="preview" class="preview" fxLayoutGap="2rem">
-          </div>
-          <mat-error *ngIf="numberExceeded">{{ limitMessage}} </mat-error>
-          <!-- <p *ngIf="numberExceeded">{{ limitMessage}} </p> -->
-       
-
-
-
-        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutAlign="end">
-        <button mat-button  (change)="selectFiles($event)" >
-            <mat-icon aria-hidden="false" aria-label="add icon">add</mat-icon> 
-            <input type="file" name="file" id="file" formControlName="file" accept="image/*" multiple class="inputfile"/>
-            <label for="file"> ADD IMAGE</label>
-           
+      </div>
+      <!-- description -->
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea  matInput formControlName="description" placeholder="Description"></textarea>
+      </mat-form-field>
+      <!-- email Address -->
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input matInput formControlName="emailaddress" placeholder="email address">
+        <mat-error *ngIf="loginForm.controls.emailaddress.errors?.required">Email Address is required</mat-error>
+        <mat-error *ngIf="loginForm.controls.emailaddress.errors?.pattern">Email Address is invalid</mat-error>
+      </mat-form-field>
+      <!-- to show images -->
+      <div fxLayout="row" >
+        <img *ngFor='let preview of previews' [src]="preview" class="preview" fxLayoutGap="2rem">
+      </div>
+      <!-- to show error message if more than 2 image is uploaded -->
+      <mat-error *ngIf="numberExceeded">{{ limitMessage}} </mat-error>
+      <!-- button div -->
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutAlign="end">
+        <!-- add image button is enabled only if form is valid -->
+        <button mat-button *ngIf="loginForm.valid"  (change)="selectFiles($event)">
+        <mat-icon aria-hidden="false" aria-label="add icon">add</mat-icon>
+        <input type="file" name="file"  id="file" formControlName="file" accept="image/*" multiple class="inputfile"  />
+        <label for="file"> ADD IMAGE</label>
         </button>
+        <!-- to show spinner while clicking the save button -->
         <ngx-spinner
-        bdColor="rgba(51,51,51,0.8)"
-        size="medium"
-        color="#fff"
-        type="ball-atom"
-      >
-        <p style="font-size: 20px; color: white">Uploading Form</p>
+          bdColor="rgba(51,51,51,0.8)"
+          size="medium"
+          color="#fff"
+          type="ball-atom"
+          >
+          <p class="uploading-form">Uploading Form</p>
         </ngx-spinner>
+        <!-- save button -->
         <button mat-raised-button color="primary" [disabled]="loginForm.invalid" (click)="save()">SAVE</button>
-        <!-- <ngx-spinner type="ball-scale-multiple"></ngx-spinner> -->
-    </div>
+      </div>
     </form>
-</div>
-
-
+  </div>

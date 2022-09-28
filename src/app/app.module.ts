@@ -21,6 +21,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     LoginPageComponent,
     SuucessDialogComponent
   ],
+  // to imports the module needed
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,7 +36,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     MatDialogModule,
     MatCardModule,
     HttpClientModule,
-    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })
+    // forRoot method for NgxSpinnerModule and pass configuration object.
+    NgxSpinnerModule.forRoot({ type: 'ball-atom' })
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,9 @@
 .container {
-    padding: 5%
+    padding: 5%;
+    background-image: url('../../assets/images/registration-banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 form {
@@ -16,10 +20,7 @@ form {
 mat-form-field {
     width:100% !important;        
 }
-/* .image-align {
-    -webkit-flex-wrap: wrap !important;
-    flex-wrap: wrap !important;
-} */
+
 .preview {
     max-width: 50%;
     margin-right:0.1rem;
@@ -37,5 +38,37 @@ mat-form-field {
     cursor: pointer;
     display: inline-block;
 }
+.uploading-form {
+    font-size: 1rem; 
+    color: white;
+}
 
+.mat-form-field-appearance-outline .mat-form-field-outline-thick:hover {
+    outline: blue !important;
+}
+.signup-form {
+    text-align: center;
+    color: rgb(0 0 0 / 54%);
+}
 
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: darkgrey !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: darkslategrey;
+}
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translate(0em,-1.65em) scale(0.8);
+    width: 100%;
+    color: darkblue;
+    font-size: 1rem;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline{
+    color: cornflowerblue
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        background-position: top;
+    }
+  }

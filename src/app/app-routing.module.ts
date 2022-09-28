@@ -8,6 +8,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  // Creates and configures a module with all the router providers 
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

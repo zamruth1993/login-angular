@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-suucess-dialog',
   templateUrl: './suucess-dialog.component.html',
-  styleUrls: ['./suucess-dialog.component.css']
+  styleUrls: ['./suucess-dialog.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SuucessDialogComponent implements OnInit {
 
